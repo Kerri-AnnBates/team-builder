@@ -16,7 +16,7 @@ function App() {
       <h1>My Team</h1>
       <Form addMembers={addMembers} /> 
       <ul>
-        {teamMembers.map(member => ( <li>{member.name}</li>))}
+        {teamMembers.map((member, index) => ( <li key={index}>{member.name}</li>))}
       </ul>
     </div>
   );

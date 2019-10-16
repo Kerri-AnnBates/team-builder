@@ -5,7 +5,8 @@ function Form(props) {
 
     const [member, setMember] = useState({
         name: '',
-        role: ''
+        role: '',
+        email: ''
     });
 
     const onInputChange = (e) => {
@@ -17,20 +18,19 @@ function Form(props) {
 
     const submitMember = (e) => {
         e.preventDefault();
-        console.log('member added')
         addMembers(member);
-        setMember({name: '', role: ''});
+        setMember({name: "", role: "", email: ""});
     }
 
     return (
         <div className='form'>
             <form>
-                <label htmlFor="fullName">Member Name</label>
-                <input onChange={onInputChange} type="text" placeholder="Member Name" name="fullName" id="fullName" />
+                <label htmlFor="name">Member Name</label>
+                <input onChange={onInputChange} type="text" placeholder="Member Name" name="name" id="name" value={member.name} />
                 <label htmlFor="email">Email</label>
-                <input onChange={onInputChange} type="email" placeholder="Member Email" name="email" id="email" />
+                <input onChange={onInputChange} type="email" placeholder="Member Email" name="email" id="email" value={member.email} />
                 <label htmlFor="role">Role</label>
-                <input onChange={onInputChange} type="role" placeholder="Member Role" name="role" id="role" />
+                <input onChange={onInputChange} type="role" placeholder="Member Role" name="role" id="role" value={member.role} />
                 <button type='submit' onClick={submitMember}>Add Member</button>
             </form>
         </div>
