@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 function Form(props) {
-    const {addMembers} = props;
+    const { addMembers, memberToEdit } = props;
 
-    const [member, setMember] = useState({
+    const [member, setMember] = useState(props.memberToEdit || {
         name: '',
-        role: '',
-        email: ''
+        email: '',
+        role: ''
     });
 
     const onInputChange = (e) => {
