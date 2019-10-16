@@ -7,10 +7,14 @@ function App() {
 
   const [teamMembers, setTeamMembers] = useState(data);
 
+  const addMembers = (member) => {
+    setTeamMembers([...teamMembers, member]);
+  }
+
   return (
     <div className="team">
       <h1>My Team</h1>
-      <Form />
+      <Form addMembers={addMembers} /> 
       <ul>
         {teamMembers.map(member => ( <li>{member.name}</li>))}
       </ul>
