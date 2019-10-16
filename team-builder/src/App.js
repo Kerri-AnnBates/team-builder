@@ -15,9 +15,17 @@ function App() {
     <div className="team">
       <h1>My Team</h1>
       <Form addMembers={addMembers} /> 
-      <ul>
-        {teamMembers.map((member, index) => ( <li key={index}>{member.name}</li>))}
-      </ul>
+      <div className='container'>
+        {teamMembers.map(
+          (member, index) => ( 
+            <div className='card-details' key={index}>
+              <h2>{member.name}</h2>
+              <a href={`mailto:${member.email}`}>{member.email}</a>
+              <p>{member.role}</p>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }
