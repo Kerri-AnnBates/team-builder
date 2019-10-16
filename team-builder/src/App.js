@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import data from './data';
+import Form from './components/Form';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="team">
       <h1>My Team</h1>
+      <Form />
       <ul>
         {teamMembers.map(member => ( <li>{member.name}</li>))}
       </ul>
